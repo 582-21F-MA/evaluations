@@ -1,7 +1,7 @@
 # Projet 1 : Vingt-et-un
 
 > Pondération : 20% \
-> Remise : 29 septembre
+> Remise : 6 octobre
 
 Le vingt-et-un est un jeu de cartes populaire qui oppose un joueur ou une
 joueuse à la banque, et dont le but est d'obtenir le score le plus élevé
