@@ -85,4 +85,4 @@ Le programme doit être remis dans un fichier nommé `main.ts`, dans un
 dépôt GitHub Classroom crée à cet effet. Pour créer le dépôt, cliquez
 [ici][GitHub Classroom].
 
-[GitHub Classroom]: TODO
+[GitHub Classroom]: https://classroom.github.com/a/YV17rlbL
