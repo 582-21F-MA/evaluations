@@ -1,5 +1,8 @@
 # Projet 2 : Calendrier
 
+> Pondération : 25% \
+> Remise : 4 décembre
+
 Pour ce deuxième projet, votre tâche est de créer dynamiquement un
 calendrier mensuel. Celui-ci doit afficher le nom du mois courant ainsi
 que l'année. Le calendrier doit aussi inclure les jours de la semaine
