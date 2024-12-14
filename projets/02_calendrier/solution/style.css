@@ -1,0 +1,37 @@
+:root {
+    font-size: 40px;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 1rem 2rem;
+}
+
+td,
+th {
+    padding: 0.5rem;
+}
+
+td {
+    border: 1px solid salmon;
+    text-align: center;
+}
+
+#year-month {
+    text-transform: uppercase;
+    color: red;
+}
+
+tr:has(.today) td {
+    background: mistyrose;
+}
+
+.today {
+    color: red;
+}
