@@ -1,6 +1,6 @@
 # Mini-test 1
 
-> Remise : 2 juin (avant le cours)\
+> Remise : 6 juin (avant le cours)\
 > Pondération : 10%
 
 Bob est un adolescent très cool. Il n'est jamais très enthousiaste — ce
