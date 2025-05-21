@@ -1,0 +1,22 @@
+{
+    "name": "solution",
+    "module": "index.ts",
+    "type": "module",
+    "private": true,
+    "devDependencies": {
+        "@types/bun": "latest",
+        "dprint": "^0.49.1",
+        "oxlint": "^0.16.6"
+    },
+    "peerDependencies": {
+        "typescript": "^5"
+    },
+    "scripts": {
+        "lint": "bun install && bun oxlint",
+        "dev": "bun index.ts",
+        "fmt": "bun install && bun dprint fmt",
+        "typecheck": "bun install && bun tsc --noEmit",
+        "review": "bun lint ; bun typecheck",
+        "submit": "bun fmt ; git add . && git commit -m submit && git push"
+    }
+}
