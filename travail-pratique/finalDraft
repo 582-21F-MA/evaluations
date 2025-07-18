@@ -1,0 +1,109 @@
+import { expect } from "bun:test";
+
+function score(dices: number[], category: string): number {
+    const diceCount = new Map<number, number>();
+
+    for (const dice of dices) {
+        diceCount.set(dice, (diceCount.get(dice) ?? 0) + 1);
+    }
+
+    const total = dices.reduce((sum, val) => sum + val, 0);
+
+    const values = Array.from(diceCount.entries()).sort((a, b) => b[1] - a[1]);
+
+    const names = ["Un", "Deux", "Trois", "Quatre", "Cinq", "Six"];
+
+    const smallStraights: number[][] = [
+        [1, 2, 3, 4],
+        [2, 3, 4, 5],
+        [3, 4, 5, 6],
+    ];
+
+    const largeStraights: number[][] = [
+        [1, 2, 3, 4, 5],
+        [2, 3, 4, 5, 6],
+    ];
+
+    function containsSequence(
+        sequence: number[],
+        diceSet: Set<number>,
+    ): boolean {
+        return sequence.every((n) => diceSet.has(n));
+    }
+
+    if (names.includes(category)) {
+        const valeur = names.indexOf(category) + 1;
+        return dices.filter((d) => d === valeur).reduce((sum, d) => sum + d, 0);
+    }
+
+    if (category === "Brelan") {
+        if (values[0] && values[0][1] >= 3) {
+            return total;
+        }
+        return 0;
+    }
+
+    if (category === "Carre") {
+        if (values[0] && values[0][1] >= 4) {
+            return total;
+        }
+        return 0;
+    }
+
+    if (category === "Full") {
+        let hasTwo = false;
+        let hasThree = false;
+        for (const [, count] of values) {
+            if (count === 2) hasTwo = true;
+            if (count === 3) hasThree = true;
+        }
+        return hasTwo && hasThree ? 25 : 0;
+    }
+
+    if (category === "Petite suite") {
+        const diceSet = new Set(dices);
+        return smallStraights.some((seq) => containsSequence(seq, diceSet))
+            ? 30
+            : 0;
+    }
+
+    if (category === "Grande suite") {
+        const diceSet = new Set(dices);
+        return largeStraights.some((seq) => containsSequence(seq, diceSet))
+            ? 40
+            : 0;
+    }
+
+    if (category === "Yahtzee") {
+        return values[0]?.[1] === 5 ? 50 : 0;
+    }
+
+    if (category === "Chance") {
+        return total;
+    }
+
+    return 0;
+}
+
+expect(score([1, 1, 1, 5, 6], "Brelan")).toEqual(14);
+expect(score([2, 2, 2, 2, 3], "Carré")).toEqual(11);
+expect(score([3, 3, 3, 5, 5], "Full")).toEqual(25);
+expect(score([1, 2, 3, 4, 6], "Petite suite")).toEqual(30);
+expect(score([2, 3, 4, 5, 6], "Grande suite")).toEqual(40);
+expect(score([4, 4, 4, 4, 4], "Yahtzee")).toEqual(50);
+expect(score([1, 2, 3, 4, 5], "Chance")).toEqual(15);
+expect(score([3, 3, 3, 3, 2], "Trois")).toEqual(12);
+expect(score([1, 1, 3, 5, 6], "Brelan")).toEqual(0);
+expect(score([1, 2, 3, 4, 5], "Carré")).toEqual(0);
+expect(score([1, 1, 2, 3, 4], "Full")).toEqual(0);
+expect(score([1, 1, 3, 5, 6], "Petite suite")).toEqual(0);
+expect(score([1, 2, 3, 5, 6], "Grande suite")).toEqual(0);
+expect(score([1, 1, 1, 1, 2], "Yahtzee")).toEqual(0);
+expect(score([2, 3, 4, 5, 6], "Un")).toEqual(0);
+expect(score([1, 1, 3, 4, 5], "Deux")).toEqual(0);
+expect(score([1, 2, 3, 4, 5], "Unknown")).toEqual(0);
+expect(score([1, 1, 1, 3, 5], "Un")).toEqual(3);
+expect(score([2, 2, 4, 5, 6], "Deux")).toEqual(4);
+expect(score([1, 2, 4, 4, 4], "Quatre")).toEqual(12);
+expect(score([5, 5, 5, 5, 5], "Cinq")).toEqual(25);
+expect(score([6, 6, 1, 2, 3], "Six")).toEqual(12);
