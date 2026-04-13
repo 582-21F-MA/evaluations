@@ -20,6 +20,7 @@ certaines évaluations ont leurs propres critères.
   - les interfaces natives sont utilisées correctement
   - il n'y a pas de variables globales
   - les fonctions sont validées à l'aide de tests automatisés
+  - le cas nominal est le moins imbriqué possible
 
 - Lisibilité
   - le code est formaté de manière cohérente
