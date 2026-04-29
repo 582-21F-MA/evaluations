@@ -20,12 +20,13 @@ certaines évaluations ont leurs propres critères.
   - les interfaces natives sont utilisées correctement
   - il n'y a pas de variables globales
   - les fonctions sont validées à l'aide de tests automatisés
-  - le cas nominal est le moins imbriqué possible
+  - les arguments ne sont pas mutés
 
 - Lisibilité
   - le code est formaté de manière cohérente
   - les valeurs importantes et celles qui se répètent sont nommées
   - le nom des affectations évoque ce que représente leur valeur
+  - le cas nominal est le moins imbriqué possible
   - le nom des fonctions évoque la valeur qu'elles produisent ou la
     tâche qu'elles effectuent
   - les affectations sont déclarées près de l'endroit où elles sont
@@ -38,6 +39,11 @@ certaines évaluations ont leurs propres critères.
     annoté
   - les commentaires sont utilisés avec parcimonie, et ils expliquent
     pourquoi un bout de code est nécessaire, non pas ce qu'il fait
+
+Notez que ces critères ne sont pas nécessairement équivalents. Si votre
+code est lisible et bien documenté, mais qu'il ne respecte pas les
+consignes ou qu'il n'est pas subdivisé en plusieurs fonctions, vous
+n'obtiendrez pas une bonne note.
 
 ## Auxiliaire d'enseignement
 
