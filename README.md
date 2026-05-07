@@ -12,7 +12,7 @@ certaines évaluations ont leurs propres critères.
 > en classe jusqu'à présent. Chaque travail peut et doit être complété
 > avec les constructions abordées avant la publication de l'énoncé.
 
-- Conception
+- Conception [5]
   - les consignes sont respectées
   - le programme est subdivisé en plusieurs fonctions
   - les types de donnée choisis représentent bien les informations
@@ -22,7 +22,7 @@ certaines évaluations ont leurs propres critères.
   - les fonctions sont validées à l'aide de tests automatisés
   - les arguments ne sont pas mutés
 
-- Lisibilité
+- Lisibilité [3]
   - le code est formaté de manière cohérente
   - les valeurs importantes et celles qui se répètent sont nommées
   - le nom des affectations évoque ce que représente leur valeur
@@ -32,7 +32,7 @@ certaines évaluations ont leurs propres critères.
   - les affectations sont déclarées près de l'endroit où elles sont
     utilisées
 
-- Documentation
+- Documentation [2]
   - l'interface des fonctions est documentée avec JSDoc
   - la documentation décrit brièvement ce que font les fonctions
   - le type des paramètres et de la valeur de retour est correctement
