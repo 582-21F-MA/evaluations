@@ -1,7 +1,7 @@
 # Travail pratique
 
 > Pondération : 20%\
-> Remise : 28 mai
+> Remise : 4 juin
 
 Le **Yahtzee** est un jeu de société dont le but est d'enchaîner des
 figures à l'aide de cinq dés pour remporter un maximum de points. À son
