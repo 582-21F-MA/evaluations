@@ -82,3 +82,4 @@ Un commentaire de type `error` indique une erreur pour laquelle vous
 serez pénalisé·e. Un commentaire de type `warning` vous invite à réviser
 le bout de code en question ; ce n'est pas nécessairement une erreur,
 mais ça pourrait l'être.
+Test pull request - Yosbel
